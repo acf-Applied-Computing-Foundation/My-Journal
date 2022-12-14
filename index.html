@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      p {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      nav {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+        background: #f7ab78;
+        color: white;
+        font-size: 30px;
+      }
+
+      .entries {
+        padding: 10px 5px;
+        margin: 2% 3%;
+        border: 2px dashed black;
+      }
+
+      .entries:nth-child(even) {
+        background-color: violet;
+        color: #222255;
+      }
+
+      .entries h1 {
+        margin: 12px 0 12px 18px;
+        color: #17ff0f;
+      }
+
+      .entries p {
+        margin: 0 12px 0 18px;
+      }
+
+      img {
+        width: 250px;
+        margin: 7px auto 12px 18px;
+        border: 2px solid rgb(66, 56, 56);
+      }
+
+      #secret1p,
+      #secret2p,
+      #secret3p {
+        display: none;
+        color: #e67f1e;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      button {
+        float: right;
+        color: rgb(212, 216, 219);
+        background-color: #237c88;
+        padding: 5px 10px;
+        margin-top: 2%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+        font-weight: 600;
+        border-radius: 10px;
+      }
+
+      footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #0c0c34;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <h1>My Journal</h1>
+    </nav>
+    <main>
+      <div class="entries">
+        <h1>My Favorite Song, On Autoplay- 08/31/2022</h1>
+        <p>
+          Today was full of small happy miracles! To state that one miracle
+          which really made my day, there was this one song by Ellie Goulding
+          that I used to listen to on loop in my high school days. Today, while
+          I was working out, I actually thought about this song randomly.
+          Believe it or not, it has been more than five years since I last
+          listened to this song and yet randomly enough, Spotify played just
+          this number for me on radio. Is this magic, or can AI finally read our
+          minds now? Anyway, it made my day.
+        </p>
+        <img src="hearingsong.gif" alt="Simpson listening to music" />
+        <br />
+        <button id="secret1btn" onclick="secret1reveal()">
+          Show Top Secret
+        </button>
+        <br />
+        <p id="secret1p">
+          The song actually reminded me of this fictional character that I
+          fangirled.
+        </p>
+      </div>
+      <div class="entries">
+        <h1>Dancing By Myself- 09/01/2022</h1>
+        <p>
+          There was a city-wide powercut today, and in this excuse, I took some
+          time off from my laptop and smartphone and went to the rooftop for a
+          nice one-hour long walk. The moon was out, and so were the stars. The
+          lack of city lights made it look even more beautiful. It was then that
+          I noticed my shadow, look somewhat eery and large on the wall- I took
+          this time to dance by myself, with my shadow.
+        </p>
+        <img src="dancingdog.gif" alt="A dancing dog" />
+        <br />
+        <p id="secret2p">
+          This was actually a creepy thing to do, I'll be honest.
+        </p>
+        <br />
+        <button id="secret2btn">Show Top Secret</button>
+        <br />
+      </div>
+      <div class="entries">
+        <h1>Dreaming About Food- 09/02/2022</h1>
+        <p>
+          Today started off kind of weird, when I had a dream very early in the
+          morning that I was eating pizza in my sleep. It was very cheesy and
+          had lots of onions and mushroom for toppings- so yum but then, I woke
+          up right before I could savour it. Pretty much then, I realized that
+          it was actually time for me to go to the gym instead. What a sad
+          reality check. :( Later on, I also ran for five extra minutes on the
+          treadmill.
+        </p>
+        <img src="eatingpizza.gif" alt="A DJ cat doing cool stuff with pizza" />
+        <br />
+        <p id="secret3p">I honestly don't even like Pizza that much. :/</p>
+        <br />
+        <button id="secret3btn" onclick="secret3reveal()">
+          Show Top Secret
+        </button>
+        <br />
+      </div>
+    </main>
+    <footer>
+      <p>Made with Love by Swatilekha, 2022. ©, 2022</p>
+    </footer>
+    <script>
+      function secret1reveal() {
+        var secret1p = document.querySelector("#secret1p");
+        var secret1btn = document.querySelector("#secret1btn");
+        if (secret1p.style.display == "none") {
+          secret1p.style.display = "block";
+          secret1btn.innerHTML = "Hide Top Secret";
+        } else {
+          secret1p.style.display = "none";
+          secret1btn.innerHTML = "Show Top Secret";
+        }
+      }
+
+      // To experiment with different ways in which we can make a button clickable in JavaScript
+      var secret2btn = document.querySelector("#secret2btn");
+      secret2btn.addEventListener("click", function secret2reveal() {
+        var secret2p = document.querySelector("#secret2p");
+        if (secret2p.style.display == "none") {
+          secret2p.style.display = "block";
+          secret2btn.innerHTML = "Hide Top Secret";
+        } else {
+          secret2p.style.display = "none";
+          secret2btn.innerHTML = "Show Top Secret";
+        }
+      });
+
+      function secret3reveal() {
+        var secret3p = document.querySelector("#secret3p");
+        var secret3btn = document.querySelector("#secret3btn");
+        if (secret3p.style.display == "none") {
+          secret3p.style.display = "block";
+          secret3btn.innerHTML = "Hide Top Secret";
+        } else {
+          secret3p.style.display = "none";
+          secret3btn.innerHTML = "Show Top Secret";
+        }
+      }
+    </script>
+  </body>
+</html>
